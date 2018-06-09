@@ -15,7 +15,9 @@ for f in pr:
         year = f.find_all('input', {'name': 'year'})[0]['value']
         dn = f.find_all('input', {'name': 'dn'})[0]['value']
         reg_type = f.find_all('input', {'name': 'reg_type'})[0]['value']
-        option = [ sem, month, year, reg_type, dn ]
+        if sem == '1&2':
+            sem = '1%262'
+        option = [ str(sem), str(month), str(year), str(reg_type), str(dn ) ]
         options.append(option)
     except:
         pass

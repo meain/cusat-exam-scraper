@@ -118,7 +118,10 @@ async def fetch_result(reg_no,
 loop = asyncio.get_event_loop()
 tasks = []
 
-options = json.loads(open('./options.json').read())['options']
+try:
+    options = json.loads(open('./options.json').read())['options']
+except:
+    print('Run examtypes.py to fetch these')
 
 # for option in options:
 #     tasks.append(
